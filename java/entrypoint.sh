@@ -88,7 +88,7 @@ if [[ "$AUTOMATIC_UPDATING" == "1" ]]; then
 
 		# Check if hash is set
 		if [ -n "${HASH}" ]; then
-			API_RESPONSE=$(curl --connect-timeout 4 -s "https://mcjars.app/api/v1/build/$HASH")
+			API_RESPONSE=$(curl --connect-timeout 4 -s "https://phntmcc.app/api/v1/build/$HASH")
 
 			# Check if .success is true
 			if [ "$(echo $API_RESPONSE | jq -r '.success')" = "true" ]; then
@@ -96,7 +96,7 @@ if [[ "$AUTOMATIC_UPDATING" == "1" ]]; then
 					echo -e "${LOG_PREFIX} New build found. Updating server..."
 
 					BUILD_ID=$(echo $API_RESPONSE | jq -r '.latest.id')
-					bash <(curl -s "https://mcjars.app/api/v1/script/$BUILD_ID/bash?echo=false")
+					bash <(curl -s "https://phntmcc.app/api/v1/script/$BUILD_ID/bash?echo=false")
 
 					echo -e "${LOG_PREFIX} Server has been updated"
 				else
@@ -116,7 +116,7 @@ fi
 # check if libraries/net/minecraftforge/forge exists and the SERVER_JARFILE file does not exist
 if [ -d "libraries/net/minecraftforge/forge" ] && [ ! -f "$SERVER_JARFILE" ]; then
 	echo -e "${LOG_PREFIX} Downloading Forge server jar file..."
-	curl -s https://s3.mcjars.app/forge/ForgeServerJAR.jar -o $SERVER_JARFILE
+	curl -s https://s3.phntmcc.app/forge/ForgeServerJAR.jar -o $SERVER_JARFILE
 
 	echo -e "${LOG_PREFIX} Forge server jar file has been downloaded"
 fi
@@ -124,7 +124,7 @@ fi
 # check if libraries/net/neoforged/neoforge exists and the SERVER_JARFILE file does not exist
 if [ -d "libraries/net/neoforged/neoforge" ] && [ ! -f "$SERVER_JARFILE" ]; then
 	echo -e "${LOG_PREFIX} Downloading NeoForge server jar file..."
-	curl -s https://s3.mcjars.app/neoforge/NeoForgeServerJAR.jar -o $SERVER_JARFILE
+	curl -s https://s3.phntmcc.app/neoforge/NeoForgeServerJAR.jar -o $SERVER_JARFILE
 
 	echo -e "${LOG_PREFIX} NeoForge server jar file has been downloaded"
 fi
@@ -132,7 +132,7 @@ fi
 # check if libraries/net/neoforged/forge exists and the SERVER_JARFILE file does not exist
 if [ -d "libraries/net/neoforged/forge" ] && [ ! -f "$SERVER_JARFILE" ]; then
 	echo -e "${LOG_PREFIX} Downloading NeoForge server jar file..."
-	curl -s https://s3.mcjars.app/neoforge/NeoForgeServerJAR.jar -o $SERVER_JARFILE
+	curl -s https://s3.phntmcc.app/neoforge/NeoForgeServerJAR.jar -o $SERVER_JARFILE
 
 	echo -e "${LOG_PREFIX} NeoForge server jar file has been downloaded"
 fi
