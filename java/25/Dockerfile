@@ -23,5 +23,5 @@ ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
 # Standard Pterodactyl entrypoint (lets Wings pass your Start Command)
-COPY ./entrypoint.sh /entrypoint.sh
+COPY ./../entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]

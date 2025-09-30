@@ -27,3 +27,5 @@
     - `ghcr.io/phntmcc/pterodactyl-yolks:java_23`
   - [`java24`](https://github.com/phntmcc/pterodactyl-yolks/tree/main/java/24)
     - `ghcr.io/phntmcc/pterodactyl-yolks:java_24`
+  - [`java25`](https://github.com/phntmcc/pterodactyl-yolks/tree/main/java/25)
+    - `ghcr.io/phntmcc/pterodactyl-yolks:java_25`
